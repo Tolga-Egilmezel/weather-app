@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "lib": ["es2015", "dom"],
+    "noImplicitAny": false,
+    "removeComments": true
+  },
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true,
+    "useWebpackText": true
+  },
+  "exclude": [
+    "node_modules/*"
+  ]
+}
