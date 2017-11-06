@@ -1,0 +1,36 @@
+<!--
+header.html
+=================
+
+HomePageComp html
+-->
+
+<section class="weather">
+
+  <div class="weather-cities">
+    <a class="weather-cities-item" *ngFor="let city of cities" [routerLink]="['/main/city', city.id]" routerLinkActive="active">
+      <div class="weather-cities-item__name">
+        {{ city.name }}
+      </div>
+      <div class="weather-cities-item__temp">
+        <span class="weather-cities-item__temp-deg">{{ city.temp }}</span>
+        <span class="weather-cities-item__temp-sign">o</span>
+      </div>
+      <div class="weather-cities-item__other">
+        <span>
+          Humidity: {{ city.humidity }}
+        </span>
+        <span>
+          Wind Speed: {{ city.wind }}          
+        </span>
+      </div>
+      <div class="weather-cities-item__condition">
+        {{ city.condition }}
+        <br>
+        {{ city.description }}
+      </div>
+    </a>
+  </div>
+
+  <router-outlet name="details"></router-outlet>
+</section>

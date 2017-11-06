@@ -3,17 +3,42 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
+import { RoutingModule, RoutingComp } from './routing';
+
+/*
+
+Components
+==========
+
+All components will be included from here;
+
+- include folder has file which are include general components like:
+header, footer
+
+- components folder has all small components which can be use anywhere on project
+Charts, notifications
+ 
+*/
+import { HeaderComp } from './include';
+import { ChartLineComponent } from './components';
+import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
     BrowserAnimationsModule,
+    RoutingModule,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  declarations: [],
+  declarations: [
+    RoutingComp,
+    HeaderComp,
+    ChartLineComponent,
+    AppComponent,
+  ],
   providers: [],
-  bootstrap: []
+  bootstrap: [ AppComponent ]
 })
 
 export class AppModule {

@@ -1,0 +1,95 @@
+/*
+home.scss
+============
+
+Home Component css
+*/
+
+@import
+  "../../scss/mixin.scss",
+  "../../scss/color.scss",
+	"../../scss/font.scss"
+;
+
+[home] {
+  display: flex;
+  flex-grow: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.weather {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  &-cities {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    height: 160px;
+    border-bottom: 4px solid $white;
+    &-item {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: calc(100% / 5);
+      text-decoration: none;
+      color: $white;
+      &:hover {
+        background-color: rgba($white, .2);
+      }
+      &.active {
+        background-color: rgba($white, .8);
+        color: $black;
+      }
+      &__name {
+        @include font-family;
+        @include font-size(16);
+        font-weight: $bold;
+      }
+      &__temp {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        &-sign {
+          @include font-family;
+          @include font-size(16);
+          font-weight: $light;
+          letter-spacing: .8px;
+        }
+        &-deg {
+          @include font-family;
+          @include font-size(28);
+          font-weight: $light;
+        }
+      }
+      &__condition {
+        @include font-family;
+        @include font-size(12);
+        font-weight: $regular;
+        text-align: center;
+      }
+      &__other {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        @include font-family;
+        @include font-size(12);
+        font-weight: $regular;
+        text-align: center;
+        span {
+          display: flex;
+          margin: 8px;
+        }
+      }
+    }
+  }
+}

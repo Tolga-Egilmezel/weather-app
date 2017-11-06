@@ -1,0 +1,26 @@
+/*
+app.component.scss
+============
+
+Outline tag (main) css file
+*/
+
+@import
+  "scss/mixin.scss",
+	"scss/color.scss"
+;
+
+main[main] {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: $white;
+  @include mq(tablet-wide, min) {
+    padding: 0;
+  };
+  background-color: $bgcolor;
+}

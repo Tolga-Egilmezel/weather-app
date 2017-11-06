@@ -1,0 +1,29 @@
+<!--
+details.html
+=================
+
+DetailsPageComp html
+-->
+
+<div class="weather-details">
+  <div class="weather-details-today" *ngIf="result" [ngStyle]="{ 'background-image': 'url(' + backgroundImage + ')'}">
+    <h3 class="weather-details-today__name">{{ weekly.name + ', ' + weekly.country}}</h3>
+    <div class="weather-details-today__temp" *ngFor="let forecast of weekly.list">
+      <span class="weather-details-today__temp-day">
+        {{ forecast.dt_txt | date:'EEEE' }}
+      </span>
+      <span class="weather-details-today__temp-day">
+        {{ forecast.dt_txt | date:'H:mm' }}
+      </span>
+      <span class="weather-details-today__temp-deg">
+        {{ forecast.main.temp_max }} <sup>o</sup>
+      </span>
+      <span class="weather-details-today__temp-deg">
+        {{ forecast.main.temp_min }} <sup>o</sup>
+      </span>
+    </div>
+  </div>
+  <div class="weather-details-nextweek" *ngIf="result">
+    <chart-line *ngIf="result.list" [data]="result.list"></chart-line>
+  </div>
+</div>

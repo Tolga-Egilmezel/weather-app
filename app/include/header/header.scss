@@ -1,0 +1,28 @@
+/*
+header.scss
+============
+*/
+
+@import
+  "../../scss/mixin.scss",
+  "../../scss/color.scss",
+	"../../scss/font.scss"
+;
+
+.header {
+  display: flex;
+  flex-grow: 0;
+  flex-direction: row;
+  height: 40px;
+  max-height: 40px;
+  &-content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    background-color: $black;
+    color: $white;
+    @include font-family;
+    @include font-size(16);
+    font-weight: $bold;
+  }
+}
